@@ -6,35 +6,58 @@ const grabList = function () {
     // this is where two names will grab all their movie lists then save them to state
 
 }
-const checkMatch = function (){
+const checkMatch = function () {
     //it will  compare lists
-    for(var i = 0; i < this.state.firstMovies.length; i++){
+    for (var i = 0; i < this.state.firstMovies.length; i++) {
 
     }
- 
+
     // else it will say no match
 }
+
 class Home extends Component {
-    state={
+    state = {
+        firstActor: "",
+        secondActor: "",
         firstMovies: [],
         secondMovies: []
+    }
+    submitActor = (event) =>{
+
     }
     render() {
         return (
             <div>
                 Home Page
-                <TextField
-                                hintText="Email"
-                                floatingLabelText="Email"
-                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                onChange={this.handleChange}
-                                name="email"
-                                type="text"
-                                required
+                <div>
+                    <TextField
+                        hintText="First Actor"
+                        floatingLabelText="First Actor"
+                        floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                        floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                        onChange={this.handleChange}
+                        name="firstActor"
+                        type="text"
+                        required
 
-                                value={this.state.info.email}
-                            />
+                        value={this.state.firstActor}
+                    />
+                    <TextField
+                        hintText="Second Actor"
+                        floatingLabelText="Second Actor"
+                        floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                        floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                        onChange={this.handleChange}
+                        name="secondActor"
+                        type="text"
+                        required
+
+                        value={this.state.secondActor}
+                    />
+                </div>
+                <div>
+                            <RaisedButton onClick={this.submitActor} label="Next" style={Style} />
+                        </div>
             </div>
         );
     }
